@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 class Player extends GameBoard{
+
     static PrintStream l=new PrintStream((new FileOutputStream(FileDescriptor.out)));
     static int count=0;
     static void placeKey(int row, int col){
@@ -55,7 +56,7 @@ class Player extends GameBoard{
     }
 }
 class GameBoard {
-      static String name;
+    static String name;
     static char key;
     static Scanner s = new Scanner(System.in);
     static PrintStream l = new PrintStream((new FileOutputStream(FileDescriptor.out)));
@@ -69,8 +70,8 @@ class GameBoard {
         }
     }
     void position(String name,char key){
-        this.name =name;
-        this.key =key;
+        GameBoard.name =name;
+        GameBoard.key =key;
         int row;
         int col;
         do {
