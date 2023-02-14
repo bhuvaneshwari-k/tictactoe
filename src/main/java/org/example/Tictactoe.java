@@ -3,9 +3,7 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
-class Player extends gameBoard{
-    static String name;
-    static char key;
+class Player extends GameBoard{
     static PrintStream l=new PrintStream((new FileOutputStream(FileDescriptor.out)));
     static int count=0;
     static void placeKey(int row, int col){
@@ -56,21 +54,23 @@ class Player extends gameBoard{
         }
     }
 }
-class gameBoard {
+class GameBoard {
+      static String name;
+    static char key;
     static Scanner s = new Scanner(System.in);
     static PrintStream l = new PrintStream((new FileOutputStream(FileDescriptor.out)));
     static char[][] board = new char[3][3];
 
-    gameBoard() {
+    GameBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 board[i][j] = ' ';
             }
         }
     }
-    static void position(String name,char key){
-        Player.name =name;
-        Player.key =key;
+    void position(String name,char key){
+        this.name =name;
+        this.key =key;
         int row;
         int col;
         do {
@@ -89,7 +89,7 @@ public class Tictactoe{
         Scanner s=new Scanner(System.in);
         Scanner s1=new Scanner(System.in);
         PrintStream l=new PrintStream((new FileOutputStream(FileDescriptor.out)));
-        gameBoard b=new gameBoard();
+        GameBoard b=new GameBoard();
         l.println("Enter the player1 name:");
         String name1=s.nextLine();
         l.println("Enter the player1 key:");
