@@ -107,8 +107,8 @@ public class Tictactoe{
             while(count1<9) {
                     b.position(name1,key1);
                     b.position(name2,key2);
-                count1++;
-            }
+                    count1=count1+2;
+            } 
         }
         else {
             while(count1<9) {
