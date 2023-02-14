@@ -3,6 +3,7 @@ import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
+static char[][] board = new char[3][3];
 class Player extends GameBoard{
 
     static PrintStream l=new PrintStream((new FileOutputStream(FileDescriptor.out)));
@@ -60,7 +61,6 @@ class GameBoard {
     static char key;
     static Scanner s = new Scanner(System.in);
     static PrintStream l = new PrintStream((new FileOutputStream(FileDescriptor.out)));
-    static char[][] board = new char[3][3];
 
     GameBoard() {
         for (int i = 0; i < 3; i++) {
